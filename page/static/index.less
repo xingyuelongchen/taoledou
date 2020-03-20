@@ -1,0 +1,485 @@
+html,
+body {
+    margin   : 0;
+    padding  : 0;
+    font-size: 14px;
+    color    : #444;
+}
+
+.scale-box(@scale) {
+    width         : 100%;
+    height        : 0px;
+    padding-bottom: @scale;
+    position      : relative;
+
+    .scale-item {
+        width   : 100%;
+        height  : 100%;
+        position: absolute;
+        top     : 0;
+        right   : 0;
+        bottom  : 0;
+        left    : 0;
+    }
+}
+
+#app {
+    .container {
+        margin: 0 auto;
+
+        .title {
+            text-align : center;
+            margin     : 40px 0;
+            font-size  : 32px;
+            font-weight: bold;
+        }
+
+        img {
+            display   : inline-block;
+            width     : 100%;
+            height    : 100%;
+            object-fit: contain;
+        }
+
+        @media screen and (min-width: 768px) {
+            width: 750px !important;
+        }
+
+        @media screen and (min-width: 992px) {
+            width: 970px !important;
+        }
+
+        @media screen and (min-width: 1200px) {
+            width: 1200px !important;
+        }
+
+        @media screen and (min-width: 1300px) {
+            width: 1200px !important;
+        }
+
+    }
+
+}
+
+
+
+.band-image {
+    display        : flex;
+    justify-content: space-evenly;
+    align-items    : center;
+    margin-bottom  : 60px;
+
+    >div {
+        margin: 5px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.band-shops {
+    .box {
+        display  : flex;
+        flex-wrap: wrap;
+
+
+        .item {
+            width        : 220px;
+            box-shadow   : 0 10px 10px #ccc;
+            padding      : 110px 20px 20px;
+            margin       : 80px 20px 20px;
+            text-align   : center;
+            border-radius: 10px;
+            position     : relative;
+
+            .band-shops-title {
+                >div {
+                    width : 65%;
+                    margin: 0 auto;
+
+                    &:first-child {
+                        color        : #4ea8f1;
+                        font-size    : 20px;
+                        margin-bottom: 10px;
+                    }
+
+                    &:last-child {
+                        color         : #444;
+                        font-size     : 12px;
+                        border-bottom : 3px solid #4ea8f1;
+                        padding-bottom: 10px;
+
+                    }
+                }
+
+            }
+
+            .band-shops-info {
+                margin       : 20px;
+                padding      : 5px 10px;
+                border       : 2px solid #4ea8f1;
+                border-radius: 20px;
+
+                >div {
+                    &:first-child {
+                        font-size: 16px;
+
+                    }
+
+                    &:last-child {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .img {
+                position  : absolute;
+                top       : -50px;
+                width     : 80%;
+                max-width : 150px;
+                height    : 75%;
+                max-height: 150px;
+                margin    : 0 auto;
+                left      : 0;
+                right     : 0;
+
+                img {
+                    width : 100%;
+                    height: 100%
+                }
+            }
+        }
+    }
+}
+
+.band-goodes {
+    // background: #f6f0e4;
+    // padding   : 40px 0;
+    position     : relative;
+    margin       : 50px 0;
+
+    .box {
+        display              : grid;
+        grid-template-columns: 32% 32% 32%;
+        grid-gap             : 20px 1%;
+        margin-bottom        : 60px;
+
+        .item {
+            text-align: center;
+            font-size : 20px;
+
+            .img {
+                width : 30%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.band-served {
+    padding: 40px 0;
+
+    .title {
+        margin: 0;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size : 16px;
+    }
+
+    .box {
+        display              : grid;
+        grid-template-columns: 24% 1fr 1fr 1fr;
+        grid-gap             : 40px 1%;
+
+        @media screen and (max-width: 992px) {
+            grid-template-columns: 49% 1fr;
+        }
+
+        .item {
+            background: #fcfcfc;
+
+            // max-width: 200px;
+            .item-title {
+                height     : 50px;
+                background : #90dfaa;
+                color      : #fff;
+                font-size  : 18px;
+                text-align : center;
+                line-height: 50px;
+            }
+
+            .el-image {
+                width          : 110px;
+                height         : 110px;
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                padding        : 10px;
+                margin         : 0 auto;
+
+                img {
+                    display: block;
+                    width  : 100%;
+                    height : 100%;
+                }
+            }
+
+            .item-doc {
+                text-align: center;
+                height    : 60px;
+            }
+
+            .item-button {
+                background: #f1f1f1;
+                padding   : 10px 0;
+
+                .button {
+                    width        : 80%;
+                    height       : 30px;
+                    line-height  : 30px;
+                    border-radius: 15px;
+                    margin       : 0 auto;
+                    text-align   : center;
+                    background   : #90dfaa;
+                    color        : #fff;
+                }
+            }
+        }
+    }
+}
+
+.band-tutor {
+    margin: 50px 0;
+
+    >div {
+        margin-bottom: 40px;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size : 16px;
+    }
+
+    .el-image {
+        img {
+            display: block;
+            width  : 100%;
+            height : 100%;
+
+        }
+    }
+}
+
+.band-zixun {
+    padding      : 80px 0;
+    margin-bottom: -1px;
+    background   : url("/images/bg.jpg") no-repeat top center / 100% 100%;
+    color        : #fff;
+    overflow     : hidden;
+
+    .title {
+        border-bottom : 3px solid #ec3;
+        padding-bottom: 20px;
+    }
+
+    .item {
+        display    : flex;
+        align-items: center;
+        margin     : 25px 0;
+
+        span {
+            width       : 20%;
+            text-align  : right;
+            margin-right: 10px;
+            min-width   : 70px;
+        }
+
+        input {
+            flex         : 1;
+            border       : none;
+            background   : #dde0ee50;
+            height       : 40px;
+            border-radius: 3px;
+            text-indent  : 16px;
+            color        : #fff;
+        }
+
+        input::-webkit-input-placeholder {
+            /* WebKit browsers 适配谷歌 */
+            color: #fff;
+        }
+
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 适配火狐 */
+            color: #fff;
+        }
+
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ 适配火狐 */
+            color: #fff;
+        }
+
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10+  适配ie*/
+            color: #fff;
+        }
+    }
+
+    button {
+        border       : none;
+        background   : #ec3;
+        border-radius: 5px;
+        color        : #fff;
+        flex         : 1;
+        height       : 36px;
+        outline      : none;
+    }
+}
+
+.app-footer {
+    height    : 300px;
+    background: #2f2f2f;
+    color     : #808080;
+    transition: all 0.2s;
+    font-size : 16px;
+
+    >* {
+        text-align: center;
+    }
+
+    .logo {
+        padding : 40px 0;
+        overflow: hidden;
+    }
+
+    .foot-menu {
+        width          : 85%;
+        height         : 30px;
+        border-bottom  : 1px solid #808080;
+        margin         : 0 auto;
+        overflow       : hidden;
+        display        : flex;
+        justify-content: center;
+
+        >.item {
+            transition: all 0.2s;
+            margin    : 0 10px;
+
+            &:hover {
+                color     : #fff;
+                transition: all 0.2s;
+                cursor    : pointer;
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    p>span {
+        margin-right: 20px;
+    }
+
+    .friendship {
+        white-space: pre-wrap;
+
+        a.link {
+            margin: 0 10px;
+        }
+    }
+}
+
+.qq {
+    position   : fixed;
+    right      : 0;
+    top        : 0;
+    bottom     : 0;
+    z-index    : 20;
+    margin     : auto;
+    display    : flex;
+    align-items: center;
+
+    .content {
+        border-radius: 5px;
+        background   : rgb(0, 160, 233);
+        color        : rgb(0, 160, 233);
+
+        a {
+            color          : rgb(0, 160, 233);
+            text-decoration: none;
+        }
+
+        .item {
+            display    : flex;
+            align-items: center;
+        }
+    }
+
+    .click {
+        position     : absolute;
+        left         : -30px;
+        color        : #fff;
+        width        : 20px;
+        text-align   : center;
+        padding      : 5px;
+        background   : #00a0e9;
+        top          : 0;
+        bottom       : 0;
+        height       : 80px;
+        border-radius: 5px 0 0 5px;
+        margin       : auto;
+        cursor       : pointer;
+    }
+
+    .title {
+        border-bottom: 1px solid rgb(0, 160, 233, 0.5);
+        padding      : 10px 0;
+        margin       : 10px 0;
+    }
+
+    .kf {
+        background   : #fff;
+        border-radius: 5px;
+        padding      : 0 10px 10px;
+        font-size    : 12px;
+
+        .item a {
+            display    : flex;
+            align-items: center;
+        }
+    }
+
+    .ts {
+        padding      : 15px 5px;
+        background   : #fff;
+        border-radius: 5px;
+        margin       : 5px 0;
+        cursor       : pointer;
+    }
+
+    .dh {
+        background   : #fff;
+        border-radius: 5px;
+        padding      : 0 5px 5px;
+    }
+}
+
+.a-enter,
+.a-leave-to {
+    margin-right: -117px;
+}
+
+.a-enter-active,
+.a-leave-active {
+    transition: all 1s;
+}
+
+.hidden-xs-only {
+    @media screen and (max-width:768px) {
+        display: none !important;
+    }
+}

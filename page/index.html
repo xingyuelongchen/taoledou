@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Document</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="http://www.taoledou.cn/dist/favicon.ico" />
+    <link rel="stylesheet" href="./static/index.css">
+    <link rel="stylesheet" href="./static/swiper.min.css">
+    <script src="./static/axios.js"></script>
+    <script src="./static/vue.min.js"></script>
+    <script src="./static/swiper.min.js"></script>
+    <script src="./static/vue-awesome-swiper.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <swiper>
+            <swiper-slide v-for="(item,index) in swiperSide">
+                <img :src="item" width="100%" />
+            </swiper-slide>
+        </swiper>
+        <div class="container">
+            <div>
+                <div class="title">实力企业 品牌保证</div>
+                <div class="band-image">
+                    <div>
+                        <img src="/images/qy1.png" />
+                    </div>
+                    <div>
+                        <img src="/images/qy2.png" />
+                    </div>
+                    <div>
+                        <img src="/images/qy3.png" />
+                    </div>
+                    <div>
+                        <img src="/images/qy4.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="band-shops">
+                <div class="title">助力新店推广 提升店铺流量 </div>
+                <div class="box">
+                    <div class="item">
+                        <div class="img">
+                            <img src="/images/icons/icon12.png" />
+                        </div>
+                        <div class="band-shops-title">
+                            <div>店铺诊断</div>
+                            <div>comparison</div>
+                        </div>
+                        <div class="band-shops-info">
+                            <div>了解服务</div>
+                            <div>MORE PRODUCTS</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img">
+                            <img src="/images/icons/icon11.png" />
+                        </div>
+                        <div class="band-shops-title">
+                            <div>分析数据</div>
+                            <div>comparison</div>
+                        </div>
+                        <div class="band-shops-info">
+                            <div>了解服务</div>
+                            <div>MORE PRODUCTS</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img">
+                            <img src="/images/icons/icon10.png" />
+                        </div>
+                        <div class="band-shops-title">
+                            <div>优化标题</div>
+                            <div>comparison</div>
+                        </div>
+                        <div class="band-shops-info">
+                            <div>了解服务</div>
+                            <div>MORE PRODUCTS</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img">
+                            <img src="/images/icons/icon9.png" />
+                        </div>
+                        <div class="band-shops-title">
+                            <div>关键词排名</div>
+                            <div>comparison</div>
+                        </div>
+                        <div class="band-shops-info">
+                            <div>了解服务</div>
+                            <div>MORE PRODUCTS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="band-goodes">
+                <div class="title">提供厂家货源 无需囤货</div>
+                <div class="box">
+                    <div class="item" v-for="(item,index) in bandGoodes" :key="index">
+                        <div class="img">
+                            <img :src="item.pic" />
+                        </div>
+                        <div>{{item.title}}</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="band-served">
+                <div style="margin-bottom:40px">
+                    <div class="title">一站式网店服务 专注更专业</div>
+                    <p class="subtitle">专注于一站式的电子商务专业服务，让互联网创业更加简单</p>
+                </div>
+                <div>
+                    <div class="box">
+                        <template v-for="(item,index) in bandServed">
+                            <div class="item" :key="index">
+                                <div class="item-title" :style="{background:item.color}">{{item.title}}</div>
+                                <div class="el-image">
+                                    <img :src="item.pic" />
+                                </div>
+                                <div class="item-doc">{{item.doc}}</div>
+                                <div class="item-button">
+                                    <div class="button" :style="{background:item.color}">立即加入</div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="band-tutor">
+                <div class="div">
+                    <div class="title">客户至上 金牌荣誉 名师指导</div>
+                    <p class="subtitle">十年淘宝经验整合实践经验，导师全天7*15小时在线解决运营难题，随叫随到，贴心服务</p>
+                </div>
+                <div class="div">
+                    <swiper :options="swiperOption.a" ref="mySwiper">
+                        <template v-for="(item,index) in swiper.a">
+                            <swiper-slide :key="index">
+                                <div class="el-image">
+                                    <img :src="item.pic" />
+                                </div>
+                            </swiper-slide>
+                        </template>
+                    </swiper>
+                </div>
+                <div>
+                    <swiper :options="swiperOption.b" ref="mySwiper">
+                        <template v-for="(item,index) in swiper.b">
+                            <swiper-slide :key="index">
+                                <div class="el-image">
+                                    <img :src="item.pic" />
+                                </div>
+                            </swiper-slide>
+                        </template>
+                    </swiper>
+                </div>
+            </div>
+        </div>
+        <div class="band-zixun">
+            <div class="container">
+                <div class="zhixun">
+                    <div class="title">立刻咨询 创业开店</div>
+                    <div style="display:flex;">
+                        <div class="el-image" style="flex:5;text-align:center">
+                            <img src="/images/a.jpg" style="width:auto" />
+                        </div>
+                        <div style="flex:8">
+                            <div class="item">
+                                <span>联系人：</span>
+                                <input v-model="form.name" type="text" placeholder="请输入联系人姓名" />
+                            </div>
+                            <div class="item">
+                                <span>联系电话：</span>
+                                <input v-model="form.mobile" type="text" placeholder="请输入联系人电话" />
+                            </div>
+                            <div class="item">
+                                <span>微信号：</span>
+                                <input v-model="form.weixin" type="text" placeholder="请输入联系人微信" />
+                            </div>
+                            <div class="item">
+                                <span>QQ号：</span>
+                                <input v-model="form.qq" type="text" placeholder="请输入联系人QQ号" />
+                            </div>
+                            <div class="item">
+                                <span></span>
+                                <button @click="onSave">立即提交</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="app-footer hidden-xs-only">
+            <div class="logo">
+                <img src="http://www.taoledou.cn/public/home/static/img/logo1.png" alt />
+            </div>
+            <p>
+                <span>投诉电话：400-0916-089</span>
+                官网投诉邮箱：tousu@taoledou.cn
+            </p>
+            <p>
+                <span>版权所有 © 四川淘乐逗科技有限公司 保留一切权利</span>
+                网站备案：
+                <a href="http://icp.chinaz.com/info?q=%E8%9C%80ICP%E5%A4%8719028568%E5%8F%B7-1" style="color:#808080"
+                    target="_blank">蜀ICP备19028568号-1</a>
+            </p>
+            <p class="friendship">
+                友情链接：
+                <template v-for="(item,index) in friendship">
+                    <a class="link" :key="index" :href="item.url" style="color:#808080"
+                        target="_blank">{{item.title}}</a>
+                </template>
+            </p>
+        </footer>
+        <div class="qq hidden-xs-only">
+            <div class="click" @click.stop="show = !show">在线客服</div>
+            <transition name="a">
+                <div class="content" v-show="show">
+                    <div style="margin: 10px;" class="transition-box">
+                        <div class="kf">
+                            <div class="title">QQ在线客服</div>
+                            <div class="item">
+                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3007562280&site=qq&menu=yes">
+                                    <img border="0" src="http://wpa.qq.com/pa?p=2:3007562280:52" alt="点击这里给我发消息"
+                                        title="点击这里给我发消息" />
+                                    售前咨询
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3007558977&site=qq&menu=yes">
+                                    <img border="0" src="http://wpa.qq.com/pa?p=2:3007558977:52" alt="点击这里给我发消息"
+                                        title="点击这里给我发消息" />
+                                    创业指导
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=3007558979&site=qq&menu=yes">
+                                    <img border="0" src="http://wpa.qq.com/pa?p=2:3007558979:52" alt="点击这里给我发消息"
+                                        title="点击这里给我发消息" />
+                                    投诉建议
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ts" @click="$router.push('/about/3')">
+                            <!--  -->
+                            投诉建议
+                        </div>
+                        <div class="dh">
+                            <div class="title">电话咨询</div>
+                            <div>400-091-6089</div>
+                        </div>
+                    </div>
+                </div>
+            </transition>
+        </div>
+    </div>
+    <script src="/static/index.js"></script>
+</body>
+
+</html>
